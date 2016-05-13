@@ -88,6 +88,7 @@
 
 		
 		window.onload=function(){
+			var form = document.createElement("form");
 			var state = getParameter("state");
 			var savedNaverState = naver.state;
 
@@ -95,7 +96,7 @@
 			if( state.match(savedNaverState)){
 
 				document.getElementById("email").value = naver.getProfileData("email");
-				document.getElementById("nickname").value = naver.getProfileData("email");
+				document.getElementById("nickname").value = naver.getProfileData("nickname");
 				document.getElementById("password").value = "";
 				document.getElementById("idType").value = "naver";
 				document.getElementById("reg_date").value = "";
@@ -107,13 +108,13 @@
 				
 		}
 </script>
-		<div id=hidden_value">
-			<form method=POST ACTION=/logon.do>
-				<input type = "hidden" name = "email" value = "" >
-				<input type = "hidden" name = "nickname" value = "" >
-				<input type = "hidden" name = "password" value = "" >
-				<input type = "hidden" name = "idType" value = "" >
-				<input type = "hidden" name = "reg_date" value = "" >
+		<div>
+			<form method="POST" ACTION="${pageContext.request.contextPath}/logon.do">
+				<input type = "hidden" id = "email" value = "" >
+				<input type = "hidden" id = "nickname" value = "" >
+				<input type = "hidden" id = "password" value = "" >
+				<input type = "hidden" id = "idType" value = "" >
+				<input type = "hidden" id = "reg_date" value = "" >
 			</form>
 		</div>
 	</body>

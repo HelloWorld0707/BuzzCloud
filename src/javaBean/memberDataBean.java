@@ -5,10 +5,11 @@ import java.sql.Timestamp;
 //User Table 참조
 public class memberDataBean {
 
-	private String id;
-	private String name;
+	private int id;
+	private String nickname;
 	private String password;
 	private String idType;
+	private String email;
 	private Timestamp reg_date;
 	
 	public memberDataBean(){
@@ -16,31 +17,32 @@ public class memberDataBean {
 	
 	public memberDataBean(memberDataBean mdb){
 		id = mdb.id;
-		name = mdb.name;
+		nickname = mdb.nickname;
 		password = mdb.password;
 		idType = mdb.idType;
 		reg_date = mdb.reg_date;
 	}
 	
-	public memberDataBean(String id, String name, String pw, String idType, Timestamp reg_data){
+	public memberDataBean(int id, String email, String name, String pw, String idType, Timestamp reg_date){
 		this.id = id;
-		this.name = name;
+		this.email = email;
+		this.nickname = name;
 		this.password = pw;
 		this.idType = idType;
 		this.reg_date = reg_date;
 	}
 	
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+	public String getNickname() {
+		return nickname;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setNickname(String name) {
+		this.nickname = name;
 	}
 	public String getPassword() {
 		return password;
@@ -54,6 +56,14 @@ public class memberDataBean {
 	public void setIdType(String idType) {
 		this.idType = idType;
 	}
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public Timestamp getReg_date() {
 		return reg_date;
 	}
