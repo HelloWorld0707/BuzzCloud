@@ -1,17 +1,23 @@
-package login;
+package logon;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import property.commandAction;
 
-	public class firstPage implements commandAction{
+	public class logonProcess implements commandAction{
 		
+
+	
 		@Override
 		public String requestPro(HttpServletRequest request,
 				HttpServletResponse response) throws Throwable {
 		
-			return "loginPage/userLogin.jsp";
+			System.out.println(request.getAttribute("email"));
+			
+			
+			
+			return "logonPage/mainPage.jsp";
 		}
 	}
 
